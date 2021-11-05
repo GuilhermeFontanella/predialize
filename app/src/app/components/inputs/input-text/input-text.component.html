@@ -1,0 +1,8 @@
+<mat-form-field class="col-12" appearance="fill">
+  <mat-label>Pesquisar Clientes:</mat-label>
+  <input matInput [(ngModel)]="text" placeholder="Nome do Cliente" type="text">
+</mat-form-field>
+<div class="btn">
+  <button mat-flat-button class="btn-padrao" style="margin-right: 15px;" (click)="buttonEvent('search')">Pesquisar</button>
+  <button mat-flat-button class="btn-green" type="reset" (click)="buttonEvent('clear')">Limpar</button>
+</div>

@@ -1,0 +1,19 @@
+<app-load [loading]="loading"></app-load>
+<div class="container">
+  <div class="row">
+    <app-input-text (emitValue)="searchClients($event)" (clearSearch)="clearSearch($event)"></app-input-text>
+  </div>
+  <div class="row">
+      <div *ngFor="let client of clients; let i = index" class="col-lg-3 col-md-4 col-sm-12" style="margin-bottom: 2rem;">
+        <app-presentation-card
+        [client]="client"
+         [url]="client.image_src"
+         [_idClient]="client?._id"
+         [propertiesTotal]="propertiesTotal"
+         route="client/{{client?._id}}/enterprises">
+        </app-presentation-card>
+      </div>
+  </div>
+</div>
+
+

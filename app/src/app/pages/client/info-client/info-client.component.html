@@ -1,0 +1,34 @@
+
+  <div class="container">
+    <p class="h1 text-left">Cliente:</p>
+    <div class="btn" style="margin-left: 10px;">
+      <button mat-flat-button class="btn-green" type="reset" (click)="backToClient()">Voltar</button>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-12" id="cardClient" style="margin-bottom: 2rem;">
+        <app-presentation-card
+        [client]="client"
+        [url]="client.image_src"
+        [_idClient]="client?._id"
+        [hidedButtons]="true">
+        </app-presentation-card>
+      </div>
+    </div>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div class="container">
+    <p class="h1 text-left">Empreendimentos Associados a este Cliente:</p>
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-12" style="margin-bottom: 2rem;"
+        *ngFor="let enterprise of enterprises; let i = index">
+        <app-presentation-card
+        [enterprise]="enterprises[i]"
+        [url]="enterprises[i]?.image_src"
+        [_idEnterprises]="enterprises[i]?._id"
+        [hidedButtons]="false">
+        </app-presentation-card>
+      </div>
+    </div>
+
